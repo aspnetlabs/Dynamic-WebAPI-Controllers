@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Common.Request
 {
-    [Serializable]
+    
     public class ClientRequest<T> where T :class, new()
     {
         public string SourceSystem { get; set; }

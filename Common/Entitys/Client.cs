@@ -2,12 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 namespace Common
 {
-    [Serializable]
-    [GeneratedController("api/client")]
-    public class Client : IManagedEntity
+    
+    [GeneratedController("api/client","test")]
+    public class Client 
     {
         public Client()
         {
@@ -17,4 +18,5 @@ namespace Common
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }
+ 
 }

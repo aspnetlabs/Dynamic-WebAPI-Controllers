@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace WebApplication2
 {
+    [Produces("application/json", "applicaiton/xml")]
     [Route("api/[controller]")]
     public class BaseController<T> : Controller where T : class, new()
     {
@@ -25,8 +26,10 @@ namespace WebApplication2
         //}
 
         [HttpPost]
-        public void Post( [FromBody]ClientRequest<T> value)
-        { 
+        public ClientRequest<T> Post( [FromBody]ClientRequest<T> value)
+        {
+            value.EntityVersion = "2.0";
+            return value; 
         }
     }
 }

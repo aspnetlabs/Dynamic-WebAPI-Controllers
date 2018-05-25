@@ -1,17 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Common
 {
-    [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-    public class GeneratedControllerAttribute : Attribute
+    
+    public class GeneratedControllerAttribute: Attribute
     {
-        public GeneratedControllerAttribute(string route)
+        public string Route { get; set; }
+        public string ControllerName { get; set; }
+
+        public GeneratedControllerAttribute(string route, string controllerName)
         {
             Route = route;
+            ControllerName = controllerName;
         }
-
-        public string Route { get; set; }
     }
 }
-
-
