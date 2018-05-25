@@ -17,6 +17,7 @@ namespace WebApplication2
 
                 if (customNameAttribute?.Route != null)
                 {
+                    controller.ControllerName = customNameAttribute.ControllerName;
                     controller.Selectors.Add(new SelectorModel
                     {
                         AttributeRouteModel = new AttributeRouteModel(new RouteAttribute(customNameAttribute.Route)),
